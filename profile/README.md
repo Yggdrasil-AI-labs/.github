@@ -1,6 +1,6 @@
 # Yggdrasil AI Labs
 
-Self-hosted **AI operations** and **signals (SIGINT) tooling** — open-source tools that turn real-world RF (ADS-B aircraft, Wi-Fi/BLE, LoRa mesh) into clean, structured data, shipped on a gated CI/CD pipeline with supply-chain security.
+Self-hosted AI operations & signals (SIGINT) tooling — open-source tools that turn real-world RF into clean, structured data, on gated CI/CD.
 
 ## Open-source tools
 
