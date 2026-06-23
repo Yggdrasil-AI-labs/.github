@@ -1,22 +1,20 @@
 # Yggdrasil AI Labs
 
-Self-hosted AI & SIGINT tooling. Home of the **WDGoWars feeder family** — Norse-named
-tools that turn real-world captures (aircraft, Wi-Fi, LoRa mesh) into
-[WDGoWars](https://wdgwars.pl) leaderboard score.
+Self-hosted **AI operations** and **signals (SIGINT) tooling** — open-source tools that turn real-world RF (ADS-B aircraft, Wi-Fi/BLE, LoRa mesh) into clean, structured data, shipped on a gated CI/CD pipeline with supply-chain security.
 
-## The feeder family
+## Open-source tools
 
-| Repo | Codename | Feeds |
-|---|---|---|
-| [adsb-to-wdgwars](https://github.com/Yggdrasil-AI-labs/adsb-to-wdgwars) | **Muninn** | ADS-B aircraft (dump1090/readsb, tar1090, Beast, GDL-90, …) |
-| [wigle-to-wdgwars](https://github.com/Yggdrasil-AI-labs/wigle-to-wdgwars) | — | WiGLE Wi-Fi / BLE wardrive CSVs |
-| [meshcore-to-wdgwars](https://github.com/Yggdrasil-AI-labs/meshcore-to-wdgwars) | **Heimdall** | MeshCore LoRa mesh nodes |
-| [gungnir](https://github.com/Yggdrasil-AI-labs/gungnir) | — | Shared HMAC transport (retry, cooldown, silent-drop detection) |
-| [wdgwars-api-tester](https://github.com/Yggdrasil-AI-labs/wdgwars-api-tester) | — | API-surface probe / outage + 404 fingerprinting |
+| Repo | What it does |
+|---|---|
+| [adsb-to-wdgwars](https://github.com/Yggdrasil-AI-labs/adsb-to-wdgwars) | Normalizes 13 ADS-B receiver dialects into one JSON schema · CLI + in-browser (Pyodide/WASM) |
+| [meshcore-to-wdgwars](https://github.com/Yggdrasil-AI-labs/meshcore-to-wdgwars) | LoRa / MeshCore mesh telemetry → normalized records |
+| [wigle-to-wdgwars](https://github.com/Yggdrasil-AI-labs/wigle-to-wdgwars) | WiGLE Wi-Fi / BLE wardrive CSVs → structured records |
+| [gungnir](https://github.com/Yggdrasil-AI-labs/gungnir) | Shared HMAC-signed transport client — integrity, retry, cooldown, silent-drop detection |
+| [wdgwars-api-tester](https://github.com/Yggdrasil-AI-labs/wdgwars-api-tester) | Contract-testing harness for an undocumented HTTP API — probe quorum + 404 fingerprinting |
 
 ## How it's built
 
-- **One transport, many feeders** — `gungnir` signs every upload with an HMAC envelope; the feeders just parse and hand off.
-- **Same core, CLI + browser** — Muninn and Heimdall ship one parser as both a Python CLI and an in-browser Pyodide build.
-- **Gated CI/CD on every repo** — pytest + coverage → SonarCloud quality gate → Snyk SCA → release artifact. Scanned before anything ships.
+- **One transport, many tools** — signing, retry, and back-pressure live once in `gungnir`; the tools stay small and focused.
+- **Local-first** — browser builds process data in-page (Pyodide/WASM); no server sees raw input.
+- **Gated CI/CD on every repo** — pytest + coverage → SonarCloud quality gate (SAST) → Snyk SCA → release artifact, enforced by branch protection on `main`.
 - **MIT-licensed, no telemetry.**
