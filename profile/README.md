@@ -1,6 +1,6 @@
 # Yggdrasil AI Labs
 
-Self-hosted AI & OSINT tooling. Home of the **WDGoWars feeder family** — Norse-named
+Self-hosted AI & SIGINT tooling. Home of the **WDGoWars feeder family** — Norse-named
 tools that turn real-world captures (aircraft, Wi-Fi, LoRa mesh) into
 [WDGoWars](https://wdgwars.pl) leaderboard score.
 
