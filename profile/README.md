@@ -1,6 +1,6 @@
 # Yggdrasil AI Labs
 
-Self-hosted AI operations & signals (SIGINT) tooling — open-source tools that turn real-world RF into clean, structured data, on gated CI/CD.
+Self-hosted AI operations & signals (SIGINT) tooling — open-source tools that turn real-world RF into clean, structured data, plus the disclosure tooling that keeps publishing safe. All on gated CI/CD.
 
 ## Open-source tools
 
@@ -11,6 +11,7 @@ Self-hosted AI operations & signals (SIGINT) tooling — open-source tools that 
 | [wigle-to-wdgwars](https://github.com/Yggdrasil-AI-labs/wigle-to-wdgwars) | WiGLE Wi-Fi / BLE wardrive CSVs → structured records |
 | [gungnir](https://github.com/Yggdrasil-AI-labs/gungnir) | Shared HMAC-signed transport client — integrity, retry, cooldown, silent-drop detection |
 | [wdgwars-api-tester](https://github.com/Yggdrasil-AI-labs/wdgwars-api-tester) | Contract-testing harness for an undocumented HTTP API — probe quorum + 404 fingerprinting |
+| [leakguard](https://github.com/Yggdrasil-AI-labs/leakguard) | Pre-publish disclosure scanner: secrets, PII, and internal identifiers. Stdlib-only core; generic patterns public, your inventory stays local |
 
 ## How it's built
 
