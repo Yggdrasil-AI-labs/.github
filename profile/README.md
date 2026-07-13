@@ -11,7 +11,7 @@ Self-hosted AI operations & signals (SIGINT) tooling: open-source tools that tur
 | [wigle-to-wdgwars](https://github.com/Yggdrasil-AI-labs/wigle-to-wdgwars) | WiGLE Wi-Fi / BLE wardrive CSVs → structured records |
 | [gungnir](https://github.com/Yggdrasil-AI-labs/gungnir) | Shared HMAC-signed transport client: integrity, retry, cooldown, silent-drop detection |
 | [wdgwars-api-tester](https://github.com/Yggdrasil-AI-labs/wdgwars-api-tester) | Contract-testing harness for an undocumented HTTP API: probe quorum + 404 fingerprinting |
-| [leakguard](https://github.com/Yggdrasil-AI-labs/leakguard) | Pre-publish disclosure scanner: secrets, PII, and internal identifiers. Stdlib-only core; generic patterns public, your inventory stays local |
+| [predisclose](https://github.com/Yggdrasil-AI-labs/predisclose) | Pre-publish disclosure scanner: secrets, PII, and internal identifiers. Stdlib-only core; generic patterns public, your inventory stays local |
 
 ## How it's built
 
