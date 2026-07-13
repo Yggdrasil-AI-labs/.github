@@ -1,6 +1,6 @@
 # Yggdrasil AI Labs
 
-Self-hosted AI operations & signals (SIGINT) tooling — open-source tools that turn real-world RF into clean, structured data, plus the disclosure tooling that keeps publishing safe. All on gated CI/CD.
+Self-hosted AI operations & signals (SIGINT) tooling: open-source tools that turn real-world RF into clean, structured data, plus the disclosure tooling that keeps publishing safe. All on gated CI/CD.
 
 ## Open-source tools
 
@@ -9,15 +9,15 @@ Self-hosted AI operations & signals (SIGINT) tooling — open-source tools that 
 | [adsb-to-wdgwars](https://github.com/Yggdrasil-AI-labs/adsb-to-wdgwars) | Normalizes 13 ADS-B receiver dialects into one JSON schema · CLI + in-browser (Pyodide/WASM) |
 | [meshcore-to-wdgwars](https://github.com/Yggdrasil-AI-labs/meshcore-to-wdgwars) | LoRa / MeshCore mesh telemetry → normalized records |
 | [wigle-to-wdgwars](https://github.com/Yggdrasil-AI-labs/wigle-to-wdgwars) | WiGLE Wi-Fi / BLE wardrive CSVs → structured records |
-| [gungnir](https://github.com/Yggdrasil-AI-labs/gungnir) | Shared HMAC-signed transport client — integrity, retry, cooldown, silent-drop detection |
-| [wdgwars-api-tester](https://github.com/Yggdrasil-AI-labs/wdgwars-api-tester) | Contract-testing harness for an undocumented HTTP API — probe quorum + 404 fingerprinting |
+| [gungnir](https://github.com/Yggdrasil-AI-labs/gungnir) | Shared HMAC-signed transport client: integrity, retry, cooldown, silent-drop detection |
+| [wdgwars-api-tester](https://github.com/Yggdrasil-AI-labs/wdgwars-api-tester) | Contract-testing harness for an undocumented HTTP API: probe quorum + 404 fingerprinting |
 | [leakguard](https://github.com/Yggdrasil-AI-labs/leakguard) | Pre-publish disclosure scanner: secrets, PII, and internal identifiers. Stdlib-only core; generic patterns public, your inventory stays local |
 
 ## How it's built
 
-- **One transport, many tools** — signing, retry, and back-pressure live once in `gungnir`; the tools stay small and focused.
-- **Local-first** — browser builds process data in-page (Pyodide/WASM); no server sees raw input.
-- **Gated CI/CD on every repo** — pytest + coverage → SonarCloud quality gate (SAST) → Snyk SCA → release artifact, enforced by branch protection on `main`.
+- **One transport, many tools**: signing, retry, and back-pressure live once in `gungnir`; the tools stay small and focused.
+- **Local-first**: browser builds process data in-page (Pyodide/WASM); no server sees raw input.
+- **Gated CI/CD on every repo**: pytest + coverage → SonarCloud quality gate (SAST) → Snyk SCA → release artifact, enforced by branch protection on `main`.
 - **MIT-licensed, no telemetry.**
 
 ## AI Ops
