@@ -4,6 +4,10 @@ Self-hosted AI operations & signals (SIGINT) tooling: open-source tools that tur
 
 ## Open-source tools
 
+Built and run in the lab: human-directed, AI-assisted development, gated CI/CD, and the agent fleet below that operates the infrastructure. Two families.
+
+### Signal pipeline: capture, normalize, transport
+
 | Repo | What it does |
 |---|---|
 | [adsb-to-wdgwars](https://github.com/Yggdrasil-AI-labs/adsb-to-wdgwars) | Normalizes 13 ADS-B receiver dialects into one JSON schema · CLI + in-browser (Pyodide/WASM) |
@@ -11,6 +15,11 @@ Self-hosted AI operations & signals (SIGINT) tooling: open-source tools that tur
 | [wigle-to-wdgwars](https://github.com/Yggdrasil-AI-labs/wigle-to-wdgwars) | WiGLE Wi-Fi / BLE wardrive CSVs → structured records |
 | [gungnir](https://github.com/Yggdrasil-AI-labs/gungnir) | Shared HMAC-signed transport client: integrity, retry, cooldown, silent-drop detection |
 | [wdgwars-api-tester](https://github.com/Yggdrasil-AI-labs/wdgwars-api-tester) | Contract-testing harness for an undocumented HTTP API: probe quorum + 404 fingerprinting |
+
+### Disclosure tooling
+
+| Repo | What it does |
+|---|---|
 | [predisclose](https://github.com/Yggdrasil-AI-labs/predisclose) | Pre-publish disclosure scanner: secrets, PII, and internal identifiers. Stdlib-only core; generic patterns public, your inventory stays local |
 
 ## How it's built
@@ -22,7 +31,7 @@ Self-hosted AI operations & signals (SIGINT) tooling: open-source tools that tur
 
 ## AI Ops
 
-Yggdrasil AI Labs is a self-hosted lab for applied AI engineering: building local-first systems end to end, then running them hard enough to find the limits. The feeders above turn real-world RF into structured data. The lab itself is operated by a fleet of around twenty small, single-purpose agents that handle the work a person would otherwise do by hand, so the engineering effort goes into building and stress-testing, not babysitting.
+Yggdrasil AI Labs is a self-hosted lab for applied AI engineering: building local-first systems end to end, then running them hard enough to find the limits. The signal-pipeline tools above turn real-world RF into structured data. The lab itself is operated by a fleet of around twenty small, single-purpose agents that handle the work a person would otherwise do by hand, so the engineering effort goes into building and stress-testing, not babysitting.
 
 The design is local-first. Agents run inference on local GPUs and only fall back to a hosted model when a task needs it, which keeps recurring work cheap and on-prem. Each agent is a small, dependency-light service that writes its own state and journal, fails safe, and reports to a shared dashboard, so the fleet stays observable and any one piece can be reasoned about in isolation.
 
