@@ -4,7 +4,7 @@ Self-hosted AI operations & signals (SIGINT) tooling: open-source tools that tur
 
 ## Open-source tools
 
-Built and run in the lab: human-directed, AI-assisted development, gated CI/CD, and the agent fleet below that operates the infrastructure. Two families.
+Built and run in the lab: human-directed, AI-assisted development, gated CI/CD, and the agent fleet below that operates the infrastructure. Three families.
 
 ### Signal pipeline: capture, normalize, transport
 
@@ -15,6 +15,12 @@ Built and run in the lab: human-directed, AI-assisted development, gated CI/CD, 
 | [wigle-to-wdgwars](https://github.com/Yggdrasil-AI-labs/wigle-to-wdgwars) | WiGLE Wi-Fi / BLE wardrive CSVs → structured records |
 | [gungnir](https://github.com/Yggdrasil-AI-labs/gungnir) | Shared HMAC-signed transport client: integrity, retry, cooldown, silent-drop detection |
 | [wdgwars-api-tester](https://github.com/Yggdrasil-AI-labs/wdgwars-api-tester) | Contract-testing harness for an undocumented HTTP API: probe quorum + 404 fingerprinting |
+
+### Readout: consume, display
+
+| Repo | What it does |
+|---|---|
+| [wdgwars-discord-stats](https://github.com/Yggdrasil-AI-labs/wdgwars-discord-stats) | Read side of the same API the feeders push to: live WDGoWars stats as a Discord voice-channel dashboard or webhook post · stdlib-only, read-only |
 
 ### Disclosure tooling
 
